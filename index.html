@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoTrack – Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🌿 EcoTrack</div>
+    <button id="themeToggle">🌙</button>
+  </nav>
+
+  <header class="hero">
+    <h1>EcoTrack – Carbon Footprint Calculator</h1>
+    <p>Measure your environmental impact and discover ways to reduce it.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Enter Your Details</h2>
+
+      <div class="form-group">
+        <label>Monthly Electricity Usage (kWh)</label>
+        <input type="number" id="electricity" min="0" />
+      </div>
+
+      <div class="form-group">
+        <label>Weekly Travel Distance (km)</label>
+        <input type="number" id="travel" min="0" />
+      </div>
+
+      <div class="form-group">
+        <label>Monthly Water Usage (litres)</label>
+        <input type="number" id="water" min="0" />
+      </div>
+
+      <div class="form-group">
+        <label>Plastic Usage</label>
+        <select id="plastic">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Flights Per Year</label>
+        <input type="number" id="flights" min="0" />
+      </div>
+
+      <div class="form-group">
+        <label>Household Size</label>
+        <input type="number" id="household" min="1" />
+      </div>
+
+      <div class="form-group">
+        <label>Recycling Habit</label>
+        <select id="recycling">
+          <option value="always">Always</option>
+          <option value="sometimes">Sometimes</option>
+          <option value="never">Never</option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button onclick="calculate()">Calculate</button>
+        <button onclick="resetForm()" class="secondary">Reset</button>
+      </div>
+    </section>
+
+    <section class="card results">
+      <h2>Results Dashboard</h2>
+
+      <div class="result-grid">
+        <div class="box">Total CO₂: <span id="total">0</span></div>
+        <div class="box">Eco Score: <span id="score">100</span></div>
+        <div class="box">Rating: <span id="rating">-</span></div>
+      </div>
+
+      <div class="breakdown">
+        <p>Electricity: <span id="elec">0</span></p>
+        <p>Transport: <span id="trans">0</span></p>
+        <p>Water: <span id="waterOut">0</span></p>
+        <p>Plastic: <span id="plasticOut">0</span></p>
+        <p>Flights: <span id="flightOut">0</span></p>
+      </div>
+
+      <h3>Suggestions</h3>
+      <ul id="suggestions"></ul>
+    </section>
+  </main>
+
+  <footer>
+    EcoTrack © 2026 | Built for sustainable future 🌍
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
